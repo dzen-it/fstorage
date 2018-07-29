@@ -86,14 +86,15 @@ At the moment there is a fixed minimum request interval of 1 minute.
 
 ### Headers hash control
 If a header is exists when the file is uploading, the hash will be calculated, if it does not match the hash from the header, then will return the error.
+
 | Header | Hash type |
-|--|--|
-|X-FStorage-Hash-Control-MD5| MD5|
-|X-FStorage-Hash-Control-SHA1| SHA1|
-|X-FStorage-Hash-Control-SHA256| SHA2 256 Bit|
-|X-FStorage-Hash-Control-SHA512| SHA2 512 Bit|
-|X-FStorage-Hash-Control-Keccak256| SHA3 256 Bit|
-|X-FStorage-Hash-Control-Keccak512| SHA3 512 Bit|
+|---|---|
+| X-FStorage-Hash-Control-MD5 | MD5|
+| X-FStorage-Hash-Control-SHA1 | SHA1|
+| X-FStorage-Hash-Control-SHA256 | SHA2 256 Bit|
+| X-FStorage-Hash-Control-SHA512 | SHA2 512 Bit|
+| X-FStorage-Hash-Control-Keccak256 | SHA3 256 Bit|
+| X-FStorage-Hash-Control-Keccak512 | SHA3 512 Bit|
 
 #### Example:
 ```bash
