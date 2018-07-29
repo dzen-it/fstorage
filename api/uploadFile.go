@@ -43,7 +43,7 @@ func (api *API) UploadFile() http.HandlerFunc {
 }
 
 func processUploadFile(s storage.Storage, body io.Reader, expectedHashes map[string]string, basicHash hash.Hash, limitFileSize int64) (string, error) {
-	tmpFile, err := ioutil.TempFile("", "github.com/dzen-it/fstorage-")
+	tmpFile, err := ioutil.TempFile("", "fstorage-")
 	if err != nil {
 		log.Errorw("Error create temporary file", "err", err.Error())
 		return "", ErrInternalError
