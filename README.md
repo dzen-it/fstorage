@@ -80,7 +80,7 @@ At the moment there is a fixed minimum request interval of 1 minute.
 
 | Endpoint | Method | Body | Succes response | Description | 
 |---|---|---|---|---|
-| /files/{name_of_file} | PUT | Bytes of file  | Code: 201<br> Body: "c1133418aba4ed90f78881498fc1a1ce68870f569489a661d89d89eb3416a7f4" | Upload file |
+| /files/{name_of_file} | PUT | Bytes of file  | Code: 201<br> Body: c1133418aba4ed90f78881498fc1a1ce68870f569489a661d89d89eb3416a7f4 | Upload file |
 | /files/{hash_of_file} | GET || Code: 200 | Download file |
 | /files/{hash_of_file} | DELETE | | Code: 204 | Delete file | 
 
@@ -88,12 +88,12 @@ At the moment there is a fixed minimum request interval of 1 minute.
 If a header is exists when the file is uploading, the hash will be calculated, if it does not match the hash from the header, then will return the error.
 | Header | Hash type |
 |--|--|
-X-FStorage-Hash-Control-MD5| MD5
-X-FStorage-Hash-Control-SHA1| SHA1
-X-FStorage-Hash-Control-SHA256| SHA2 256 Bit
-X-FStorage-Hash-Control-SHA512| SHA2 512 Bit
-X-FStorage-Hash-Control-Keccak256| SHA3 256 Bit
-X-FStorage-Hash-Control-Keccak512| SHA3 512 Bit
+|X-FStorage-Hash-Control-MD5| MD5|
+|X-FStorage-Hash-Control-SHA1| SHA1|
+|X-FStorage-Hash-Control-SHA256| SHA2 256 Bit|
+|X-FStorage-Hash-Control-SHA512| SHA2 512 Bit|
+|X-FStorage-Hash-Control-Keccak256| SHA3 256 Bit|
+|X-FStorage-Hash-Control-Keccak512| SHA3 512 Bit|
 
 #### Example:
 ```bash
