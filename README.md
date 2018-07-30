@@ -83,8 +83,10 @@ At the moment there is a fixed minimum request interval of 1 minute.
 | /files/{name_of_file} | PUT | Bytes of file  | Code: 201 Body: hash string| Upload file |
 ||||Code: 400| Empty file<br> Invalid filename<br> Hashes from headers does not match |
 ||||Code: 413| File too large |
+||||Code: 500| Internal error 
 | /files/{hash_of_file} | GET || Code: 200 | Download file |
 ||||Code: 404| File not found |
+||||Code: 500| Internal error 
 | /files/{hash_of_file} | DELETE | | Code: 204 | Delete file | 
 ||||Code: 404| File not found |
 ||||Code: 500| Internal error |
