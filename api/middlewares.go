@@ -64,13 +64,5 @@ func MiddlewareValidateHeadersControl(next http.Handler) http.Handler {
 		ctx = context.WithValue(ctx, "headerscontrol", headers)
 
 		next.ServeHTTP(w, r.WithContext(ctx))
-
-	})
-}
-
-func MiddlewareValidateFileSize(next http.Handler) http.Handler {
-	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		r.Body = http.MaxBytesReader(w, r.Body, 1)
-		next.ServeHTTP(w, r)
 	})
 }

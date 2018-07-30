@@ -18,7 +18,6 @@ const (
 	ErrFileTransferFailure
 	ErrInvalidFilename
 	ErrFileNotFound
-	ErrInvalidHeaderControl
 	ErrInvalidHeader
 	ErrTheseHashesDoNotMatch
 	ErrMaxSizeFileLimit
@@ -36,8 +35,6 @@ func writeErrorHTTP(w http.ResponseWriter, err error) {
 		http.Error(w, "Invalid filename", http.StatusBadRequest)
 	case ErrFileNotFound:
 		http.Error(w, "File not found", http.StatusNotFound)
-	case ErrInvalidHeaderControl:
-		http.Error(w, "File is corrupted", http.StatusGone)
 	case ErrInvalidHeader:
 		http.Error(w, "Invalid header value format ", http.StatusBadRequest)
 	case ErrTheseHashesDoNotMatch:
