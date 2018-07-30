@@ -78,11 +78,17 @@ server.MountHandler("/", r)
 ## REST API   
 At the moment there is a fixed minimum request interval of 1 minute.
 
-| Endpoint | Method | Body | Succes response | Description | 
+| Endpoint | Method | Body | Responses | Description | 
 |---|---|---|---|---|
-| /files/{name_of_file} | PUT | Bytes of file  | Code: 201<br> Body: c1133418aba4ed90f78881498fc1a1ce68870f569489a661d89d89eb3416a7f4 | Upload file |
+| /files/{name_of_file} | PUT | Bytes of file  | Code: 201 Body: hash string| Upload file |
+||||Code: 400| Empty file<br> Invalid filename<br> Hashes from headers does not match |
+||||Code: 413| File too large |
 | /files/{hash_of_file} | GET || Code: 200 | Download file |
+||||Code: 404| File not found |
 | /files/{hash_of_file} | DELETE | | Code: 204 | Delete file | 
+||||Code: 404| File not found |
+||||Code: 500| Internal error |
+
 
 ### Headers hash control
 If a header is exists when the file is uploading, the hash will be calculated, if it does not match the hash from the header, then will return the error.
